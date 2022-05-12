@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper">
+
+  <div class="container">
+
+      <div class="row ">
+          <div class="col-md-6 offset-md-3">
+            
+            <mat-card>
+           <div class="container text-center">
+            <img style="height:120px" src="../../assets/login.png" alt="" />
+            </div>
+            <h1 class="resize" class="text-center">Login Here !!</h1>
+           <!-- {{loginData | json}}-->
+            <form (ngSubmit)="formSubmit()">
+              <!--User name field-->
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>User Name</mat-label>
+                <input  [(ngModel)]="loginData.username"
+                name="username"
+                 required matInput placeholder="Enter here">
+                <mat-hint>Enter Valid Username!!</mat-hint>
+              </mat-form-field>
+
+               <!--Password field-->
+             <mat-form-field class="full-width" appearance="outline">
+                <mat-label>User Password</mat-label>
+                <input [(ngModel)]="loginData.password"
+                name="password"
+                type="password" required
+                matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <!--for button-->
+             <div class="container text-center">
+                <button type="submit" mat-raised-button color="primary">Login</button>
+                <button  class=ml20 style="margin-left: 20px" mat-raised-button color="accent"> Reset</button>
+                </div>
+            
+            </form>
+        </mat-card>
+          </div>
+      </div>
+  </div>
+
+
+</div>
